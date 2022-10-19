@@ -119,34 +119,51 @@
             <form action="forms/quote.php" method="post" class="php-email-form">
               <h3>Get a quote</h3>
               <p>Pick up the phone and call us today. We will be happy to answer any of your questions and can even provide you with a free quote. So, get in touch today—we promise you won’t be disappointed!</p>
-              <div class="row gy-3">
+              <div class="row gy-3"><form id="contact-form" method="post" action="contact.php" role="form">
 
-                <div class="col-md-12">
-                  <input type="text" name="name" class="form-control" placeholder="Name" required>
+    <div class="messages"></div>
+
+    <div class="controls">
+
+        <div class="row">
+            <div class="col-md-15">
+                <div class="form-group">
+                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Name" required="required" data-error="Name is required.">
+                    <div class="help-block with-errors"></div>
                 </div>
-
-                <div class="col-md-12 ">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-15">
+                <div class="form-group">
+                    <label for="form_email"></label>
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required="required" data-error="Valid email is required.">
+                    <div class="help-block with-errors"></div>
                 </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="phone" placeholder="Phone" required>
+            </div>
                 </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="form_message"></label>
+                    <textarea id="form_message" name="message" class="form-control" placeholder="Message" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                    <div class="help-block with-errors"></div>
                 </div>
+            </div>
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-success btn-send" value="Get a quote">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-muted">
+            </div>
+        </div>
+    </div>
 
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
-
-                  <button type="submit">Get a quote</button>
-                </div>
-
-              </div>
-            </form>
+</form>
           </div><!-- End Quote Form -->
 
         </div>
